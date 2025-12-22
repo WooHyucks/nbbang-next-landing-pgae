@@ -1,5 +1,5 @@
 import React from 'react';
-import { Zap, ArrowRight, Sparkles } from 'lucide-react';
+import { Zap, ArrowRight, Sparkles, Gift, Clock, Shield, Send } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 export function Hero() {
@@ -85,6 +85,36 @@ export function Hero() {
             복잡한 계산은 그만! 모임에서 사용한 금액을 자동으로 계산하고<br className="hidden md:block" />
             토스·카카오페이로 바로 송금하세요
           </motion.p>
+          
+          {/* Badges */}
+          <motion.div
+            variants={itemVariants}
+            className="flex flex-wrap justify-center items-center gap-3 mb-6"
+          >
+            {[
+              { text: '100% 무료', icon: Gift },
+              { text: '단 10초만에 시작', icon: Clock },
+              { text: '결제정보 불필요', icon: Shield },
+              { text: '원클릭 송금', icon: Send },
+            ].map((badge, index) => {
+              const Icon = badge.icon;
+              return (
+                <motion.div
+                  key={index}
+                  className="group flex items-center gap-2 bg-white px-4 py-2 rounded-xl border border-gray-200/50 shadow-sm hover:shadow-md transition-all"
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.4, delay: index * 0.1 }}
+                  whileHover={{ scale: 1.05 }}
+                >
+                  <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-[#3182f6] to-[#3167fc] flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-md shadow-[#3182f6]/30">
+                    <Icon className="w-4 h-4 text-white" />
+                  </div>
+                  <span className="text-sm font-medium text-gray-700">{badge.text}</span>
+                </motion.div>
+              );
+            })}
+          </motion.div>
           
           <motion.div
             variants={itemVariants}

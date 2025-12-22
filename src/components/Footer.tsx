@@ -1,10 +1,9 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Github, Mail } from 'lucide-react';
+import { Mail } from 'lucide-react';
 
 export function Footer() {
   const socialLinks = [
-    { icon: Github, label: 'Github', href: '#' },
     { icon: Mail, label: 'Email', href: '#' },
   ];
 

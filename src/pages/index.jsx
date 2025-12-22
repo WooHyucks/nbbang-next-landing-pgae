@@ -48,13 +48,15 @@ export default function Home() {
           <div className="flex items-center justify-between">
             <motion.div
               className="flex items-center gap-2"
-              whileHover={{ scale: 1.05 }}
+              whileHover={{ scale: 1.02 }}
               transition={{ type: "spring", stiffness: 400 }}
             >
-              <div className="w-8 h-8 bg-gradient-to-br from-[#3182f6] to-[#3167fc] rounded-lg flex items-center justify-center shadow-md shadow-[#3182f6]/30">
-                <span className="text-white">N</span>
+              <div className="w-10 h-10 bg-gradient-to-br from-[#3182f6] to-[#3167fc] rounded-lg flex items-center justify-center shadow-lg shadow-[#3182f6]/30">
+                <span className="text-white text-lg">N</span>
               </div>
-              <span className="text-xl text-[#191f28]">엔빵</span>
+              <h3 className="text-2xl bg-gradient-to-r from-[#3182f6] to-[#fee500] bg-clip-text text-transparent">
+                엔빵
+              </h3>
             </motion.div>
             
             <div className="hidden md:flex items-center gap-8">
