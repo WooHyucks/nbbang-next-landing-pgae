@@ -4,7 +4,7 @@ import { Mail } from 'lucide-react';
 
 export function Footer() {
   const socialLinks = [
-    { icon: Mail, label: 'Email', href: '#' },
+    { icon: Mail, label: 'Email', href: 'mailto:kimwoosky123@gmail.com' },
   ];
 
 

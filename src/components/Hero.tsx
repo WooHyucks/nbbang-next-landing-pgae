@@ -1,6 +1,7 @@
 import React from 'react';
-import { Zap, ArrowRight, Sparkles, Gift, Clock, Shield, Send } from 'lucide-react';
+import { Zap, ArrowRight, Sparkles, Gift, Clock, Shield, Send, FileSpreadsheet, X } from 'lucide-react';
 import { motion } from 'framer-motion';
+
 
 export function Hero() {
   const containerVariants = {
@@ -44,9 +45,42 @@ export function Hero() {
           initial="hidden"
           animate="visible"
         >
+          <motion.div
+            variants={itemVariants}
+            className="inline-flex items-center gap-3 bg-gradient-to-r from-red-50 to-orange-50 px-6 py-3 rounded-2xl border-2 border-red-200/50 shadow-lg mb-6"
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.5 }}
+            whileHover={{ scale: 1.02 }}
+          >
+              <FileSpreadsheet className="w-6 h-6 text-red-500" />
+              <span className="text-lg md:text-xl font-bold text-red-600">
+                아직도 엑셀로 정산하세요?
+              </span>
+            </motion.div>
+
+          
+          
+          <motion.h1
+            variants={itemVariants}
+            className="text-4xl md:text-5xl mb-4 tracking-tight text-[#191f28]"
+          >
+            엑셀 정산을 대체하는<br />
+            <span className="bg-gradient-to-r from-[#3182f6] to-[#3167fc] bg-clip-text text-transparent">
+              엔빵
+            </span>
+          </motion.h1>
+          
+          <motion.p
+            variants={itemVariants}
+            className="text-lg md:text-xl text-gray-600 mb-6 max-w-2xl mx-auto font-medium"
+          >
+            금액만 입력하면 정산과 송금(토스·카카오)이 바로 끝납니다.
+          </motion.p>
+          
           <motion.div variants={itemVariants}>
             <motion.div
-              className="inline-flex items-center gap-1 bg-gradient-to-r from-[#3167fc]/10 to-[#3182f6]/10 text-[#3167fc] px-4 py-2 rounded-full mb-6 border border-[#3182f6]/20"
+              className="inline-flex items-center gap-1 bg-gradient-to-r from-[#3167fc]/10 to-[#3182f6]/10 text-[#3167fc] px-4 py-2 rounded-full mb-8 border border-[#3182f6]/20"
               whileHover={{ scale: 1.05 }}
               transition={{ type: "spring", stiffness: 400 }}
             >
@@ -66,25 +100,6 @@ export function Hero() {
               <Sparkles className="w-3 h-3" />
             </motion.div>
           </motion.div>
-          
-          <motion.h1
-            variants={itemVariants}
-            className="text-4xl md:text-6xl mb-6 tracking-tight text-[#191f28]"
-          >
-            모임 정산,<br />
-            <span className="bg-gradient-to-r from-[#3182f6] to-[#3167fc] bg-clip-text text-transparent">
-              엔빵
-            </span>
-            으로 끝내세요
-          </motion.h1>
-          
-          <motion.p
-            variants={itemVariants}
-            className="text-lg md:text-xl text-gray-600 mb-8 max-w-2xl mx-auto"
-          >
-            복잡한 계산은 그만! 모임에서 사용한 금액을 자동으로 계산하고<br className="hidden md:block" />
-            토스·카카오페이로 바로 송금하세요
-          </motion.p>
           
           {/* Badges */}
           <motion.div
